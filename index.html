@@ -2201,6 +2201,35 @@ input[type=checkbox] {
     font-size: 1em;
   }
 }
+
+/* Siteram 404 button */
+.siteram-404-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.18);
+  background:#111;
+  color:#fff !important;
+  text-decoration:none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:600;
+  letter-spacing:.2px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  transition: transform 150ms ease, opacity 150ms ease, box-shadow 150ms ease;
+}
+.siteram-404-btn:hover{
+  opacity:.92;
+  transform: translateY(-1px);
+  text-decoration:none;
+  box-shadow: 0 14px 38px rgba(0,0,0,.16);
+}
+.siteram-404-btn:active{
+  transform: translateY(0);
+  opacity:.88;
+}
+
 </style>
   <style>/* Copyright 2013 The Chromium Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
@@ -2558,8 +2587,8 @@ html[subframe] body {
    }(document, 'script', 'facebook-jssdk'));
 </script>
 <div id="main-frame-error" class="interstitial-wrapper" jstcache="0">
-    <div class="onlyforchrome" style="font-size: 30px;text-align: center;font-family: Helvetica;">Ошибка 404</div>
-    <div class="onlyforchrome" style="margin-top:18px;text-align:center;font-family: Helvetica;font-size:16px;"><a href="https://siteram.ru" style="color:#15c;">Вернуться на главную</a></div>
+    <div class="onlyforchrome" style="margin-top:10px;text-align:center;color:#8a8a8a;margin-bottom:80px; font-size:.8em;line-height:1.2em;font-family: Georgia;">Нажмите «Пробел», чтобы прыгнуть и начать игру.</div>
+    <div style="margin-top:34px; text-align:center;"><a class="siteram-404-btn" href="https://siteram.ru">Вернуться на главную</a></div>
     <div class="onlyforchrome" style="margin-top:5px;text-align:center;color:#8a8a8a;margin-bottom:80px; font-size:.8em;line-height:1.2em;font-family: Georgia;"><a href="http://www.thecodepost.org/internet/play-hidden-t-rex-game-offline-chrome/" target="_blank"><strong>Игра с динозавром T‑Rex</strong></a> from Google Chrome offline mode ripped by <a href="https://www.twitter.com/thecodepost" target="_blank"><strong>@thecodepost</strong></a>.<br/> Нажмите «Пробел», чтобы прыгнуть и начать игру.</div>
 	<div id="main-frame-notchrome" style="display:none; margin-top:50px;">Эта мини‑игра работает в браузере Chrome. Вы можете установить его бесплатно <a href="https://www.google.com/chrome">здесь</a>.</div>
     <div id="offline-resources" jstcache="0">

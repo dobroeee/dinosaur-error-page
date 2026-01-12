@@ -2633,6 +2633,26 @@ html[subframe] body {
     if (navigator.userAgent.toLowerCase().indexOf('chrome') <= -1) {
 	  hideClass(".onlyforchrome");
 	}
+
+		<script>
+(function () {
+  function isTypingTarget(el){
+    if(!el) return false;
+    const tag = (el.tagName || "").toLowerCase();
+    return tag === "input" || tag === "textarea" || el.isContentEditable;
+  }
+
+  window.addEventListener("keydown", function(e){
+    const key = e.code || e.key;
+    const isSpace = key === "Space" || key === " " || e.keyCode === 32;
+    if(!isSpace) return;
+
+    if(isTypingTarget(document.activeElement)) return;
+
+    // не даём странице прокручиваться пробелом
+    e.preventDefault();
+  }, { passive: false });
+})();
   </script>
 	  
 

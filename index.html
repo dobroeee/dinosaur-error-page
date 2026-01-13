@@ -2607,6 +2607,37 @@ html[subframe] body {
   </script>
 	  
 
+<script>
+  (function () {
+    function hardNavigate(url) {
+      try {
+        if (window.top && window.top !== window) {
+          window.top.location.href = url;
+        } else {
+          window.location.href = url;
+        }
+      } catch (e) {
+        window.location.href = url;
+      }
+    }
+
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a') : null;
+      if (!a) return;
+
+      var href = a.getAttribute('href');
+      if (!href) return;
+
+      var url;
+      try { url = new URL(a.href, window.location.href); } catch (err) { return; }
+
+      if (url.origin === window.location.origin) {
+        e.preventDefault();
+        hardNavigate(url.href);
+      }
+    }, true);
+  })();
+</script>
 
 
 </body>
